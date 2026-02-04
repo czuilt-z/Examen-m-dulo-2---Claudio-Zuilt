@@ -1,0 +1,549 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+@media (max-width: 768px){
+
+    
+/* ------------------------------------ Container ----------------------- */
+.container{
+    background-color: gray;
+    
+    margin: auto;
+    overflow: hidden;
+
+    width: 100%;
+    min-height: 100vh;
+    
+    display: grid;    
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 150px 1fr 1000px 100px;
+    grid-template-areas: 
+    "header header"
+    "main main"
+    "info info"
+    "footer footer";
+}
+
+/* ------------------------------------ grid-area: header; ----------------------- */
+
+.header{
+    background-color: gainsboro;
+    grid-area: header;
+    height: 100vh;
+    padding-left: 40px;
+
+    color: #ffffff;
+    text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    
+    
+    align-items: center;
+    align-self: center;
+
+}
+
+.header-logo{
+    
+    width: 100px;
+    height: auto;
+    animation: Logo-gira 10s linear infinite;
+}
+
+
+@keyframes Logo-gira {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.header-nav{
+    margin: 40px;
+}
+
+.header-nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    
+    gap: 15px;
+    
+}
+
+.header-nav ul li a{
+    text-decoration: none;
+}
+
+/* ------------------------------------ grid-area: main; ----------------------- */
+
+.main{
+    background-color: white;
+    grid-area: main;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    justify-content: space-evenly;
+    padding-top: 20px;
+    padding-bottom: 20px;   
+    gap: 20px;
+}
+
+.main-card{
+    background-color: lightgray;
+    width: 300px;
+    padding: 20px;
+    /* margin: 20px; */
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.main-img{
+    
+    width: 100px;
+    height: 155px;
+    object-fit: contain;
+    transition: transform 0.5s;
+    filter: grayscale(0%);
+    
+}
+
+.main-img:hover{
+    transform: scale(1.3);
+    filter: grayscale(0%);
+}
+
+.main-card a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+/* ------------------------------------ grid-area: info; ----------------------- */
+
+.info{
+    background-color: lightblue;
+    grid-area: info;
+
+    color: #ffffff;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-evenly; */
+    gap: 20px;
+    padding: 20px;
+    
+}
+
+.info-many_cards
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    justify-content: space-evenly;
+    gap: 20px;
+}   
+
+.info-card{
+    background-color: lightgray;
+    width: 300px;
+    /* height: 100%; */
+    /* height: 200px; */
+    padding: 20px;
+    /* margin: 20px; */
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+
+
+    .info-fondo-tienda{
+        width: 300px;
+        height: 100px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: info-img-tienda 2s infinite;
+        
+    }
+
+    @keyframes info-img-tienda {
+    0% {
+        background-image: url('../img/Tienda1.png');
+    }
+    50% {
+        background-image: url('../img/Tienda2.png');
+    }
+    100% {
+        background-image: url('../img/Tienda1.png');
+    }
+    }
+
+.info-fondo-historia{
+     width: 300px;
+        height: 100px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: info-img-historia 2s infinite;
+
+}
+
+@keyframes info-img-historia {
+  0% {
+    background-image: url('../img/Vestido\ medieval\ sf.PNG');
+  }
+  50% {
+    background-image: url('../img/Capa%20de%20noble%20sf.PNG');
+  }
+  100% {
+    background-image: url('../img/Vestido%20medieval%20sf.PNG');
+  }
+}
+
+.info-fondo-valores{
+     width: 300px;
+        height: 100px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: info-img-valores 2s infinite;
+}
+
+@keyframes info-img-valores {
+  0% {
+    background-image: url('../img/Espada%202%20sf.PNG');
+  }
+  50% {
+    background-image: url('../img/Espada%203%20sf.PNG');
+  }
+  100% {
+    background-image: url('../img/Espada%202%20sf.PNG');
+  }
+}
+
+.info-card a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+
+/* ------------------------------------ grid-area: footer; ----------------------- */
+
+footer{
+    background-color: aqua;
+    grid-area: footer;
+    
+    color: #ffffff;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+}
+
+@media (min-width: 769px) and (max-width: 2000px) {
+
+    
+/* ------------------------------------ Container ----------------------- */
+.container{
+    background-color: gray;
+    
+    margin: auto;
+    overflow: hidden;
+
+    width: 100%;
+    min-height: 100vh;
+    
+    display: grid;    
+    grid-template-columns: 150px 1fr;
+    grid-template-rows: 1fr 400px 100px;
+    grid-template-areas: 
+    "header main"
+    "info info"
+    "footer footer";
+}
+
+/* ------------------------------------ grid-area: header; ----------------------- */
+
+.header{
+    background-color: gainsboro;
+    grid-area: header;
+
+    color: #ffffff;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    
+    padding-top: 20px;
+    align-items: center;
+}
+
+.header-logo{
+    width: 100px;
+    height: auto;
+    animation: Logo-gira 10s linear infinite;
+}
+
+
+@keyframes Logo-gira {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.header-nav{
+    margin-top: 10px;
+}
+
+.header-nav ul{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    
+}
+
+.header-nav ul li a{
+    text-decoration: none;
+}
+
+/* ------------------------------------ grid-area: main; ----------------------- */
+
+.main{
+    background-color: white;
+    grid-area: main;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    justify-content: space-evenly;
+    padding-top: 20px;
+    padding-bottom: 20px;   
+    gap: 20px;
+}
+
+.main-card{
+    background-color: lightgray;
+    width: 300px;
+    padding: 20px;
+    /* margin: 20px; */
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.main-img{
+    
+    width: 100px;
+    height: 155px;
+    object-fit: contain;
+    transition: transform 0.5s;
+    filter: grayscale(100%);
+    
+}
+
+.main-img:hover{
+    transform: scale(1.3);
+    filter: grayscale(0%);
+}
+
+.main-card a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+/* ------------------------------------ grid-area: info; ----------------------- */
+
+.info{
+    background-color: lightblue;
+    grid-area: info;
+
+    color: #ffffff;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 20px;
+    padding: 20px;
+    
+}
+
+.info-many_cards
+{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+    justify-content: space-evenly;
+    gap: 20px;
+}   
+
+.info-card{
+    background-color: lightgray;
+    width: 300px;
+    height: 100%;
+    /* height: 200px; */
+    padding: 20px;
+    /* margin: 20px; */
+    border-radius: 10px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+
+
+    .info-fondo-tienda{
+        width: 300px;
+        height: 100px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: info-img-tienda 2s infinite;
+        
+    }
+
+    @keyframes info-img-tienda {
+    0% {
+        background-image: url('../img/Tienda1.png');
+    }
+    50% {
+        background-image: url('../img/Tienda2.png');
+    }
+    100% {
+        background-image: url('../img/Tienda1.png');
+    }
+    }
+
+.info-fondo-historia{
+     width: 300px;
+        height: 100px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: info-img-historia 2s infinite;
+
+}
+
+@keyframes info-img-historia {
+  0% {
+    background-image: url('../img/Vestido\ medieval\ sf.PNG');
+  }
+  50% {
+    background-image: url('../img/Capa%20de%20noble%20sf.PNG');
+  }
+  100% {
+    background-image: url('../img/Vestido%20medieval%20sf.PNG');
+  }
+}
+
+.info-fondo-valores{
+     width: 300px;
+        height: 100px;
+        background-size: contain;
+        background-position: center;
+        background-repeat: no-repeat;
+        animation: info-img-valores 2s infinite;
+}
+
+@keyframes info-img-valores {
+  0% {
+    background-image: url('../img/Espada%202%20sf.PNG');
+  }
+  50% {
+    background-image: url('../img/Espada%203%20sf.PNG');
+  }
+  100% {
+    background-image: url('../img/Espada%202%20sf.PNG');
+  }
+}
+
+.info-card a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    text-decoration: none;
+    margin-top: auto;
+}
+
+
+/* ------------------------------------ grid-area: footer; ----------------------- */
+
+footer{
+    background-color: aqua;
+    grid-area: footer;
+    
+    color: #ffffff;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+}
+
